@@ -1,6 +1,7 @@
 package model;
 
 import java.sql.Connection;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -21,7 +22,6 @@ public class ClienteDAO {
 
 			stmt.executeUpdate();
 
-			JOptionPane.showMessageDialog(null, "Salvo com sucesso!");
 			ConnectionFactory.closeConnection(con, stmt);
 
 		} catch (SQLException ex) {

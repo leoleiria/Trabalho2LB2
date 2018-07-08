@@ -6,41 +6,12 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <MenuBar layoutY="2.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="Cadastro">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Cliente" />
-                  <MenuItem mnemonicParsing="false" text="Aviao" />
-                  <MenuItem mnemonicParsing="false" text="Vôo" />
-                  <MenuItem mnemonicParsing="false" text="Bilhete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Consulta">
-            <items>
-                  <MenuItem mnemonicParsing="false" text="Cliente" />
-                  <MenuItem mnemonicParsing="false" text="Aviao" />
-                  <MenuItem mnemonicParsing="false" text="Vôo" />
-              <MenuItem mnemonicParsing="false" text="Bilhete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Alterar">
-            <items>
-                  <MenuItem mnemonicParsing="false" text="Cliente" />
-                  <MenuItem mnemonicParsing="false" text="Aviao" />
-                  <MenuItem mnemonicParsing="false" text="Vôo" />
-                  <MenuItem mnemonicParsing="false" text="Bilhete" />
-            </items>
-          </Menu>
-            <Menu mnemonicParsing="false" text="Deletar">
-               <items>
-                  <MenuItem mnemonicParsing="false" text="Bilhete" />
-               </items>
-            </Menu>
-        </menus>
-      </MenuBar>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="400.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true" />
+<Pane id="AnchorPane" fx:id="menuPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" 
+	xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.menuController">
+   <children> 
+      <Button fx:id="cliente" layoutX="118.0" layoutY="175.0" mnemonicParsing="false" onAction="#Cliente" text="Cliente" />
+      <Button layoutX="225.0" layoutY="175.0" mnemonicParsing="false" text="Avião" />
+      <Button layoutX="349.0" layoutY="175.0" mnemonicParsing="false" text="Voo" />
+      <Button layoutX="479.0" layoutY="175.0" mnemonicParsing="false" text="Bilhete" />
    </children>
 </Pane>

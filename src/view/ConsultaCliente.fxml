@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="clienteConsulta" prefHeight="350.0" prefWidth="420.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" 
+fx:controller="controller.ConsultaClienteController">
+   <children>
+      <ToolBar prefHeight="40.0" prefWidth="200.0">
+         <items>
+            <Button fx:id="cadastro" mnemonicParsing="false" onAction="#Cadastrar" text="Cadastrar" />
+            <Button fx:id="editar" mnemonicParsing="false" onAction="#Editar" text="Editar" />
+            <Button fx:id="remover" mnemonicParsing="false" onAction="#Remover" text="Remover" />
+         </items>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </ToolBar>
+      <TableView fx:id="tabelaConsultaClientes" prefHeight="314.0" prefWidth="420.0">
+         <columns>
+            <TableColumn fx:id="colunaTabelaRg" prefWidth="113.0" text="RG" />
+            <TableColumn fx:id="colunaTabelaNome" prefWidth="189.0" text="Nome" />
+            <TableColumn fx:id="colunaTabelaTelefone" prefWidth="117.0" text="Telefone" />
+         </columns>
+      </TableView>
+   </children>
+</VBox>

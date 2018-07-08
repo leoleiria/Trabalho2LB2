@@ -8,7 +8,8 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane id="AnchorPane" fx:id="clienteCadastro" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+ 	fx:controller="controller.ClienteController">
    <children>
       <GridPane layoutX="74.0" layoutY="111.0" prefHeight="114.0" prefWidth="465.0">
         <columnConstraints>
@@ -29,7 +30,7 @@
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Telefone:" wrappingWidth="51.220703125" GridPane.rowIndex="2" />
          </children>
       </GridPane>
-      <Button layoutX="173.0" layoutY="338.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+      <Button fx:id="cancelar" layoutX="173.0" layoutY="338.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
       <Button fx:id="salvar" layoutX="360.0" layoutY="338.0" mnemonicParsing="false" onAction="#salvaform" text="Salvar" />
    </children>
 </Pane>
