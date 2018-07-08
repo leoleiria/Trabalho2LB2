@@ -19,6 +19,8 @@ public class ConsultaClienteController implements Initializable {
 	static VBox clienteConsulta;
 	@FXML
 	Button cadastro;
+	@FXML
+	Button menu;
 
 	@FXML
 	public void Cadastrar(ActionEvent e) throws IOException {
@@ -44,6 +46,15 @@ public class ConsultaClienteController implements Initializable {
 		Parent clienteCadastro = FXMLLoader.load(getClass().getResource("/view/ClienteController.fxml"));
 
 		Stage janela = (Stage) cadastro.getScene().getWindow();
+		janela.setScene(new Scene(clienteCadastro));
+	}
+
+	@FXML
+	public void Menu(ActionEvent e) throws IOException {
+
+		Parent clienteCadastro = FXMLLoader.load(getClass().getResource("/view/MenuView.fxml"));
+
+		Stage janela = (Stage) menu.getScene().getWindow();
 		janela.setScene(new Scene(clienteCadastro));
 	}
 
