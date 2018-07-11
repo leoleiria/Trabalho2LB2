@@ -10,6 +10,9 @@ public class Cliente {
 		this.nome = nome;
 		this.telefone = telefone;
 	}
+	public String getRgString() {
+		return String.valueOf(rg);
+	}
 
 	public int getRg() {
 		return rg;

@@ -5,6 +5,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JOptionPane;
 
@@ -94,4 +96,33 @@ public class ClienteDAO {
 			ConnectionFactory.closeConnection(con, stmt);
 		}
 	}
+	
+	public static List<Cliente> listar() {
+		List<Cliente> listaCliente = new ArrayList<>();
+		
+		Connection con = ConnectionFactory.getConnection();
+		PreparedStatement stmt = null;
+
+		try {
+			stmt = con.prepareStatement("select * from cliente");
+			
+			ResultSet resultado = stmt.executeQuery();
+			while (resultado.next()) {
+				int id = resultado.getInt("id");
+				String nome = resultado.getString("nomecliente");
+				int rg = resultado.getInt("rg");
+				String telefone = resultado.getString("telefone");
+				Cliente dao = new Cliente(rg, nome, telefone);
+				listaCliente.add(dao);
+			}
+			
+			ConnectionFactory.closeConnection(con, stmt);
+
+		} catch (SQLException ex) {
+			JOptionPane.showMessageDialog(null, "Erro ao Consultar: " + ex);
+			ConnectionFactory.closeConnection(con, stmt);
+		}
+		return (listaCliente);
+	}  
+	
 }
