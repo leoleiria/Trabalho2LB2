@@ -18,6 +18,8 @@ public class menuController implements Initializable {
 	static AnchorPane menuPrincipal;
 	@FXML 
 	Button cliente;
+	@FXML 
+	Button aviao;
 
 	@FXML
 	public void Cliente(ActionEvent event) throws IOException {
@@ -27,10 +29,17 @@ public class menuController implements Initializable {
 		Stage janela = (Stage) cliente.getScene().getWindow();
 		janela.setScene(new Scene(clienteCadastro));
 	
+	}	@FXML
+	public void Aviao(ActionEvent event) throws IOException {
+
+		Parent aviaoCadastro = FXMLLoader.load(getClass().getResource("/view/ConsultaAviao.fxml"));
+	
+		Stage janela = (Stage) aviao.getScene().getWindow();
+		janela.setScene(new Scene(aviaoCadastro));
+	
 	}
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
-		// TODO Auto-generated method stub
 
 	}
 

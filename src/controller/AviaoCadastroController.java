@@ -17,30 +17,30 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import model.Aviao;
+import model.AviaoDAO;
 import model.Cliente;
 import model.ClienteDAO;
 
-public class ClienteController implements Initializable {
-	private ClienteDAO cliente;
+public class AviaoCadastroController implements Initializable {
+	private AviaoDAO aviao;
 
 	@FXML
-	static AnchorPane clienteCadastro;
+	static AnchorPane aviaoCadastro;
 	@FXML
 	Button cancelar;
 	@FXML
 	private TextField nome;
 	@FXML
-	private TextField rg;
-	@FXML
-	private TextField telefone;
+	private TextField assentos;
 
-	public ClienteController() {
-		cliente = new ClienteDAO();
+	public AviaoCadastroController() {
+		aviao = new AviaoDAO();
 	}
 
 	@FXML
 	public void cancelar(ActionEvent e) throws IOException {
-		Parent clienteCadastro = FXMLLoader.load(getClass().getResource("/view/ConsultaCliente.fxml"));
+		Parent clienteCadastro = FXMLLoader.load(getClass().getResource("/view/ConsultaAviao.fxml"));
 		Stage janela = (Stage) cancelar.getScene().getWindow();
 		janela.setScene(new Scene(clienteCadastro));
 
@@ -49,7 +49,7 @@ public class ClienteController implements Initializable {
 	@FXML
 	public void salvaform(ActionEvent event) {
 		try {
-			cliente.create(new Cliente(Integer.parseInt(rg.getText()), nome.getText(), telefone.getText()));
+			aviao.create(new Aviao(nome.getText(), Integer.parseInt(assentos.getText())));
 			limpaCampos();
 			Alert alerta = new Alert(AlertType.INFORMATION);
 			alerta.setTitle("Congrats");
@@ -73,13 +73,8 @@ public class ClienteController implements Initializable {
 
 	private void limpaCampos() {
 		nome.clear();
-		rg.clear();
-		telefone.clear();
+		assentos.clear();
 	}
 	
-	public void setCampos(Cliente cliente) {
-		rg.setText(cliente.getRgString());
-		nome.setText(cliente.getNome());
-		telefone.setText(String.valueOf(cliente.getTelefone()));
-	}
+
 }

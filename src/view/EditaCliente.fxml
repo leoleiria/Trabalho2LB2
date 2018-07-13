@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<Pane id="AnchorPane" fx:id="clienteEdit" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ClienteEditController">
+   <children>
+      <GridPane layoutX="74.0" layoutY="111.0" prefHeight="114.0" prefWidth="465.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="130.0" minHeight="5.0" prefHeight="15.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="179.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="212.0" minHeight="10.0" prefHeight="24.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TextField fx:id="nome" promptText="nome" GridPane.columnIndex="1" />
+            <TextField fx:id="telefone" promptText="telefone" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nome:" wrappingWidth="51.220703125" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Telefone:" wrappingWidth="51.220703125" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+      <Button fx:id="cancelar" layoutX="173.0" layoutY="338.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+      <Button fx:id="salvar" layoutX="360.0" layoutY="338.0" mnemonicParsing="false" onAction="#salvaform" text="Salvar" />
+   </children>
+</Pane>

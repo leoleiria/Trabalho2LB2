@@ -56,20 +56,17 @@ public class ClienteDAO {
 		}
 	}
 
-	public static void altera(Cliente c, int id) {
+	public static void altera(String nome, String telefone, int rg) {
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
 
 		try {
-			stmt = con.prepareStatement("update cliente set nomecliente = ?, rg = ?, telefone = ?  where id = ?");
-			stmt.setString(1, c.getNome());
-			stmt.setInt(2, c.getRg());
-			stmt.setString(3, c.getTelefone());
-			stmt.setInt(4, id);
+			stmt = con.prepareStatement("update cliente set nomecliente = ?, telefone = ?  where rg = ?");
+			stmt.setString(1, nome);
+			stmt.setString(2, telefone);
+			stmt.setInt(3, rg);
 
 			stmt.executeUpdate();
-
-			JOptionPane.showMessageDialog(null, "Salvo com sucesso!");
 			ConnectionFactory.closeConnection(con, stmt);
 
 		} catch (SQLException ex) {
@@ -124,5 +121,25 @@ public class ClienteDAO {
 		}
 		return (listaCliente);
 	}  
+	
+	public static void deletaRG(int rg) {
+		Connection con = ConnectionFactory.getConnection();
+		PreparedStatement stmt = null;
+
+		try {
+			stmt = con.prepareStatement("delete from cliente where rg = ?");
+			stmt.setInt(1, rg);
+
+			stmt.executeUpdate();
+
+			JOptionPane.showMessageDialog(null, "Salvo com sucesso!");
+			ConnectionFactory.closeConnection(con, stmt);
+
+		} catch (SQLException ex) {
+			JOptionPane.showMessageDialog(null, "Erro ao salvar: " + ex);
+			ConnectionFactory.closeConnection(con, stmt);
+		}
+	}
+	
 	
 }

@@ -10,7 +10,7 @@
 	xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.menuController">
    <children> 
       <Button fx:id="cliente" layoutX="118.0" layoutY="175.0" mnemonicParsing="false" onAction="#Cliente" text="Cliente" />
-      <Button layoutX="225.0" layoutY="175.0" mnemonicParsing="false" text="Avião" />
+      <Button fx:id="aviao" layoutX="225.0" layoutY="175.0" mnemonicParsing="false" onAction="#Aviao" text="Avião" />
       <Button layoutX="349.0" layoutY="175.0" mnemonicParsing="false" text="Voo" />
       <Button layoutX="479.0" layoutY="175.0" mnemonicParsing="false" text="Bilhete" />
    </children>
